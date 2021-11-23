@@ -28,12 +28,16 @@ export const PostWidget = ({ categories, slug }) => {
                 <img src={post.featuredImage.url} width='60px' height='60px' alt={post.title}  className='align-middle rounded-full'/>
             </div>
             <div className='flex-grow ml-4'>
+                
+                <Link href={`/post/${post.slug}`} key={post.title} className='text-md'>
+                  <span className='font-semibold'>
+                    {post.title}
+
+                  </span>
+                </Link>
                 <p className='text-gray-500 font-xs'>
                     {moment(post.createdAt).format('MMM DD, YYYY')}
                 </p>
-                <Link href={`/post/${post.slug}`} key={post.title} className='text-md'>
-                    {post.title}
-                </Link>
             </div>
         </div>
       ))}
